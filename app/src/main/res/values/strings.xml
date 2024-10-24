@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MSAid</string>
+    <string name="msaid">MSAid</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="please_enter_your_information">Please Enter Your Information</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="do_you_have_multiple_sclerosis">Do you have Multiple Sclerosis?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last Name</string>
+    <string name="age">Age</string>
+</resources>
