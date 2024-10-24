@@ -1,0 +1,5 @@
+Version -1.0:
+    -Set up the welcome activity, signup activity, and login activity. No functionality outside of
+    linking to one another via StartActivity().
+    -Starting in "negative" versions so Version 0 will be when the app has all currently intended
+    screens.
