@@ -3,3 +3,5 @@ Version -1.0:
     linking to one another via StartActivity().
     -Starting in "negative" versions so Version 0 will be when the app has all currently intended
     screens.
+Version -1.1.0:
+    -Split SignupActivity.java into SignupActivityOne.java and SignupActivityTwo.java.
