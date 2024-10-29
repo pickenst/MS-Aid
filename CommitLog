@@ -5,3 +5,5 @@ Version -1.0:
     screens.
 Version -1.1.0:
     -Split SignupActivity.java into SignupActivityOne.java and SignupActivityTwo.java.
+Version -1.2.0:
+    -Added Home Screen with placeholder textboxes for the alarms display and the weather display

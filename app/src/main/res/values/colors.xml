@@ -3,4 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_box_color_1">#FFCDD2</color>
+    <color name="control_panel_red">#D32F2F</color>
+    <color name="control_panel_border">#707070</color>
+    <color name="button_pink">#FFCDD2</color>
 </resources>
