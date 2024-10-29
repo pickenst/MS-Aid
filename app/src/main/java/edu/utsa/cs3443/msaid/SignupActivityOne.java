@@ -8,13 +8,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivityOne extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
-        Intent loginLink = new Intent(this, LoginActivity.class);
+        setContentView(R.layout.activity_signup_one);
+        Intent continueSignup = new Intent(this, SignupActivityTwo.class);
 
         Button signupButton = findViewById(R.id.complete_signup);
         signupButton.setOnClickListener(new View.OnClickListener() {
@@ -22,7 +22,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Sign Up Pressed", Toast.LENGTH_LONG).show();
 
-                startActivity(loginLink);
+                startActivity(continueSignup);
             }
         });
 

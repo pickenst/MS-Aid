@@ -9,14 +9,18 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.MSAid"
         tools:targetApi="31">
         <activity
+            android:name=".SignupActivityTwo"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".SignupActivity"
+            android:name=".SignupActivityOne"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

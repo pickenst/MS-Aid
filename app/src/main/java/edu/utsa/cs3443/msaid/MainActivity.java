@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent loginLink = new Intent(this, LoginActivity.class);
-        Intent signupLink = new Intent(this, SignupActivity.class);
+        Intent signupLink = new Intent(this, SignupActivityOne.class);
 
         Button loginButton = findViewById(R.id.login);
         Button signupButton = findViewById(R.id.signup);

@@ -13,4 +13,6 @@
     <string name="first_name">First name</string>
     <string name="last_name">Last Name</string>
     <string name="age">Age</string>
+    <string name="cont">Continue</string>
+    <string name="city">City</string>
 </resources>
