@@ -17,6 +17,18 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
+            android:name=".AlarmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmDeleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlarmConfirmationActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignupActivityTwo"
             android:exported="false" />
         <activity

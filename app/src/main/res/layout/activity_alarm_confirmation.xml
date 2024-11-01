@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmActivity"
+    android:background="@drawable/backgroundalt">
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="127dp"
+        android:layout_height="51dp"
+        android:backgroundTint="@color/button_pink"
+        android:text="@string/back"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <Button
+        android:id="@+id/yes_button"
+        android:layout_width="244dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="340dp"
+        android:backgroundTint="@color/button_pink"
+        android:text="@string/yes1"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/no_button"
+        android:layout_width="244dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="220dp"
+        android:backgroundTint="@color/button_pink"
+        android:text="@string/no1"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/areYouSure_header"
+        android:layout_width="255dp"
+        android:layout_height="98dp"
+        android:background="@drawable/roundback"
+        android:backgroundTint="@color/text_box_color_1"
+        android:gravity="center"
+        android:text="@string/are_you_sure"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
