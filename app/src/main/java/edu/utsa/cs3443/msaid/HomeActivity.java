@@ -18,13 +18,19 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Intent alarmLink = new Intent(this, AlarmActivity.class);
+
         Button alarmsButton = findViewById(R.id.alarms_button);
         Button medicationButton = findViewById(R.id.medication_button);
         Button profileButton = findViewById(R.id.profile_button);
+
+
+
         alarmsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Alarms Button Pressed", Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(), "Moving to Alarms", Toast.LENGTH_LONG).show();
+                startActivity(alarmLink);
             }
         });
         medicationButton.setOnClickListener(new View.OnClickListener() {
