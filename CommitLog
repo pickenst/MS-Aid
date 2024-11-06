@@ -7,3 +7,9 @@ Version -1.1.0:
     -Split SignupActivity.java into SignupActivityOne.java and SignupActivityTwo.java.
 Version -1.2.0:
     -Added Home Screen with placeholder textboxes for the alarms display and the weather display
+Version -1.3.0:
+    -Added the Alarms pathway of Activities.
+    -Created the User.java, Medicine.java, Alarm.java, and WeatherService.java model classes.
+    -Implemented the Open-Mateo.com geocoding weather api for the WeatherService model class.
+    -Implemented Android's built in Location features to communicate with the weather API.
+    -Added TODOs

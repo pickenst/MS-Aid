@@ -9,7 +9,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SignupActivityOne extends AppCompatActivity {
-
+    /*
+        TODO: Get items from TextView xml objects and add them to next Intent
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

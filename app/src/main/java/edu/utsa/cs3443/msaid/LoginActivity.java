@@ -9,7 +9,10 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
-
+    /*
+        TODO:
+         -Add basic functionality (Pulling data from an User file based on login and instantiating an User object)
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -13,7 +13,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SignupActivityTwo extends AppCompatActivity {
-
+    /*
+        TODO:
+         -Get items from previous activity through Intent
+         -Create a new User directory containing login info and user info
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

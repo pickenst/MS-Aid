@@ -9,6 +9,9 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AlarmActivity extends AppCompatActivity {
+    /*
+        TODO: Add functionality to load alarms as TextViews
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

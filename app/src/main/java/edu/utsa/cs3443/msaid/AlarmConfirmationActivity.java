@@ -11,7 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AlarmConfirmationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        /*
+            TODO: Add deletion logic
+         */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_confirmation);
         Intent yesLink = new Intent(this, AlarmActivity.class);

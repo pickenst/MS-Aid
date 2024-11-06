@@ -10,9 +10,12 @@ import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AlarmDeleteActivity extends AppCompatActivity {
+    /*
+        TODO: Take basic structure of Activity and, when delete
+         button in AlarmActivity is pressed, it switches to a view that looks like this on the _AlarmActivity_
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_delete);
         Intent confirmLink = new Intent(this, AlarmConfirmationActivity.class);
