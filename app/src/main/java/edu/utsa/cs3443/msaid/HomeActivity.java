@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         Button medicationButton = findViewById(R.id.medication_button);
         Button profileButton = findViewById(R.id.profile_button);
         Intent alarmLink = new Intent(this, AlarmActivity.class);
-
+        Intent medicineLink = new Intent(this, MedicineActivity.class);
 
         alarmsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Medication Button Pressed", Toast.LENGTH_LONG).show();
+                startActivity(medicineLink);
             }
         });
         profileButton.setOnClickListener(new View.OnClickListener() {
