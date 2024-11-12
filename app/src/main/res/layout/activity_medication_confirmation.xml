@@ -46,7 +46,7 @@
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:backgroundTint="@color/button_pink"
-        android:text="@string/back"
+        android:text="back"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
