@@ -12,4 +12,6 @@ Version -1.3.0:
     -Created the User.java, Medicine.java, Alarm.java, and WeatherService.java model classes.
     -Implemented the Open-Mateo.com geocoding weather api for the WeatherService model class.
     -Implemented Android's built in Location features to communicate with the weather API.
-    -Added TODOs
+    -Added TODOs.
+Version -1.4.0:
+    -Added functionality for first signup page and removed TODO.
