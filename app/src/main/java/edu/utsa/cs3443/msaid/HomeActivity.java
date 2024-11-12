@@ -64,12 +64,16 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(alarmLink);
             }
         });
+        // Medication button click listener - Navigating to MedicationActivity
         medicationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Medication Button Pressed", Toast.LENGTH_LONG).show();
+                // Create an intent to navigate to MedicationActivity
+                Intent intent = new Intent(HomeActivity.this, MedicineActivity.class);
+                startActivity(intent); // Start the MedicationActivity
             }
         });
+
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

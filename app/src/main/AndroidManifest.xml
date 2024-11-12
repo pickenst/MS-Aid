@@ -37,6 +37,23 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".MedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedicationDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddMedicineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteMedicationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedicationConfirmationActivity"
+            android:exported="false" />
+
+
+        <activity
             android:name=".SignupActivityOne"
             android:exported="false" />
         <activity
