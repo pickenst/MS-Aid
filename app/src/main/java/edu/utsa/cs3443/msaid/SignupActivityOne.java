@@ -1,5 +1,6 @@
 package edu.utsa.cs3443.msaid;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Scanner;
+
 public class SignupActivityOne extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

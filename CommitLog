@@ -17,3 +17,8 @@ Version -1.4.0:
     -Added functionality for first signup page and removed TODO.
 Version -1.5.0:
     -Added Medicine route of Activities
+Version -1.6.0:
+    -Added functionality for login and sign up activities, creating the userlogin file if it does not exist and
+    writing to it the login info of the user upon signup while using it to instantiate an User upon login.
+    -Made model classes with the exception of the WeatherService parceable, allowing them to be added to intents.
+    -Removed TODO no longer needed

@@ -68,7 +68,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), "Medication Button Pressed", Toast.LENGTH_LONG).show();
-                startActivity(medicineLink);
+                startActivity(medicineLink
+                );
             }
         });
         profileButton.setOnClickListener(new View.OnClickListener() {

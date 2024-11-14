@@ -1,8 +1,13 @@
 package edu.utsa.cs3443.msaid.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 
-public class User {
+public class User implements Parcelable {
     private String name;
     private int age;
     private ArrayList<Alarm> alarms;
@@ -13,6 +18,13 @@ public class User {
         this.age = age;
         this.alarms = new ArrayList<>();
         this.medicines = new ArrayList<>();
+    }
+
+    protected User(Parcel in){
+        this.name = in.readString();
+        this.age = in.readInt();
+        this.alarms = in.createTypedArrayList(Alarm.CREATOR);
+        this.medicines = in.createTypedArrayList(Medicine.CREATOR);
     }
 
     public String getName() {
@@ -46,4 +58,29 @@ public class User {
     public void setMedicines(ArrayList<Medicine> medicines) {
         this.medicines = medicines;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeInt(age);
+        dest.writeTypedList(alarms);
+        dest.writeTypedList(medicines);
+    }
+
+    public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>(){
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[0];
+        }
+    };
 }

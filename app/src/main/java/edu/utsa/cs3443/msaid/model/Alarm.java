@@ -1,6 +1,12 @@
 package edu.utsa.cs3443.msaid.model;
 
-public class Alarm {
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Alarm implements Parcelable {
     private String name;
     private int hour;
     private int minute;
@@ -11,6 +17,15 @@ public class Alarm {
         this.hour = hour;
         this.minute = minute;
         this.pm = pm;
+    }
+
+    protected Alarm(Parcel in){
+        this.name = in.readString();
+        this.hour = in.readInt();
+        this.minute = in.readInt();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            this.pm = in.readBoolean();
+        }
     }
 
     public String getName() {
@@ -44,4 +59,31 @@ public class Alarm {
     public void setPm(boolean pm) {
         this.pm = pm;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeInt(hour);
+        dest.writeInt(minute);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            dest.writeBoolean(pm);
+        }
+    }
+
+    public static final Parcelable.Creator<Alarm> CREATOR = new Parcelable.Creator<Alarm>(){
+        @Override
+        public Alarm createFromParcel(Parcel in) {
+            return new Alarm(in);
+        }
+
+        @Override
+        public Alarm[] newArray(int size) {
+            return new Alarm[0];
+        }
+    };
 }
