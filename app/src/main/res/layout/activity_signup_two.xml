@@ -112,6 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/yes"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="66dp"
             tools:layout_editor_absoluteY="539dp" />
@@ -122,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/no"
+            android:textColor="@color/black"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="232dp"
             tools:layout_editor_absoluteY="539dp" />
@@ -135,6 +137,7 @@
         android:backgroundTint="@color/text_box_color_1"
         android:gravity="center"
         android:text="Do you suffer from Multiple Sclerosis?"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -8,7 +8,12 @@ import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.utsa.cs3443.msaid.model.User;
+
 public class AlarmConfirmationActivity extends AppCompatActivity {
+
+    private User currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         /*
@@ -16,9 +21,13 @@ public class AlarmConfirmationActivity extends AppCompatActivity {
          */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_confirmation);
+        currentUser = getIntent().getParcelableExtra("user");
         Intent yesLink = new Intent(this, AlarmActivity.class);
+        yesLink.putExtra("user", currentUser);
         Intent noLink = new Intent(this, AlarmDeleteActivity.class);
+        noLink.putExtra("user", currentUser);
         Intent deleteLink = new Intent(this, AlarmDeleteActivity.class);
+        deleteLink.putExtra("user", currentUser);
 
 
         Button yesButton = findViewById(R.id.yes_button);

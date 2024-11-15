@@ -8,7 +8,12 @@ import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.utsa.cs3443.msaid.model.User;
+
 public class AlarmActivity extends AppCompatActivity {
+
+    private User currentUser;
+
     /*
         TODO: Add functionality to load alarms as TextViews
      */
@@ -17,10 +22,13 @@ public class AlarmActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_main);
+        currentUser = getIntent().getParcelableExtra("user");
         Intent homeLink = new Intent(this, HomeActivity.class);
+        homeLink.putExtra("user", currentUser);
         Intent addLink = new Intent(this, AlarmAddActivity.class);
+        addLink.putExtra("user", currentUser);
         Intent deleteLink = new Intent(this, AlarmDeleteActivity.class);
-
+        deleteLink.putExtra("user", currentUser);
 
 
         Button addButton = findViewById(R.id.add_button);

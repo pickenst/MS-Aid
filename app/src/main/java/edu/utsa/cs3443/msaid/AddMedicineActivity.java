@@ -8,7 +8,11 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.utsa.cs3443.msaid.model.User;
+
 public class AddMedicineActivity extends AppCompatActivity {
+
+    private User currentUser;
 
     // Declare EditText and Button variables
     private EditText nameEditText;
@@ -20,7 +24,7 @@ public class AddMedicineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_medication); // Set the layout file
-
+        currentUser = getIntent().getParcelableExtra("user");
         // Initialize EditText and Button views
         nameEditText = findViewById(R.id.nameEditText);
         instructionsEditText = findViewById(R.id.instructionsEditText);
@@ -33,6 +37,7 @@ public class AddMedicineActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Navigate back to Medicine Activity
                 Intent intent = new Intent(AddMedicineActivity.this, MedicineActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 finish(); // Finish the current activity to remove it from the stack
             }
@@ -50,6 +55,7 @@ public class AddMedicineActivity extends AppCompatActivity {
 
                 // Navigate back to Medicine Activity
                 Intent intent = new Intent(AddMedicineActivity.this, MedicineActivity.class);
+                intent.putExtra("user", currentUser);
                 startActivity(intent);
                 finish(); // Finish the current activity to remove it from the stack
             }

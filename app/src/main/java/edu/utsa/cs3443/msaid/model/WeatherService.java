@@ -28,12 +28,8 @@ public class WeatherService {
     private double temperature;
     private String weather;
 
-    private ExecutorService executorService;
-    private JSONObject weatherInfo;
-
 
     public WeatherService(double latitude, double longitude, Activity activity) throws JSONException, IOException {
-        this.executorService = Executors.newSingleThreadExecutor();
 
         weatherCodeTable = new HashMap<>();
         initCodeTable(activity);
@@ -167,19 +163,15 @@ public class WeatherService {
         }
     }
     public String getWeather(){
-        System.out.println("Returning weather " + weather);
         return this.weather;
     }
     public String getWindType(){
-        System.out.println("Returning WT " + this.windType);
         return this.windType;
     }
     public double getTemperature(){
-        System.out.println("Returning Temp " + this.temperature);
         return this.temperature;
     }
     public double getWindSpeed(){
-        System.out.println("Returning WS " + this.windSpeed);
         return this.windSpeed;
     }
 

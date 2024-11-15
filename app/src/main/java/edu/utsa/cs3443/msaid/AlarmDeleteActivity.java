@@ -9,7 +9,12 @@ import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import edu.utsa.cs3443.msaid.model.User;
+
 public class AlarmDeleteActivity extends AppCompatActivity {
+
+    private User currentUser;
+
     /*
         TODO: Take basic structure of Activity and, when delete
          button in AlarmActivity is pressed, it switches to a view that looks like this on the _AlarmActivity_
@@ -18,9 +23,11 @@ public class AlarmDeleteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_delete);
+        currentUser = getIntent().getParcelableExtra("user");
         Intent confirmLink = new Intent(this, AlarmConfirmationActivity.class);
+        confirmLink.putExtra("user", currentUser);
         Intent alarmLink = new Intent(this, AlarmActivity.class);
-
+        alarmLink.putExtra("user", currentUser);
 
         Button confirmButton = findViewById(R.id.confirm_button);
         Button backButton = findViewById(R.id.back_button);

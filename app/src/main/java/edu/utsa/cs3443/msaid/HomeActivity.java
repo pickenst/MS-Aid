@@ -17,6 +17,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -24,12 +25,14 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 
+import edu.utsa.cs3443.msaid.model.User;
 import edu.utsa.cs3443.msaid.model.WeatherService;
 
 public class HomeActivity extends AppCompatActivity {
+    private final int INIT_DELAY_TIME = 1250; //ms
+
     /*
         TODO:
-         -Solve bug on first Activity launch on non-emulator devices
          -Implement visual functionality of WeatherService
          -Implement the User's Alarms array
          -Add User object to class that can be added to next activity (Or get the User from the previous activity)
@@ -41,10 +44,21 @@ public class HomeActivity extends AppCompatActivity {
     private static double latitude;
     private WeatherService service;
 
+    private TextView windDisplay;
+    private TextView weatherDisplay;
+    private TextView tempDisplay;
+    private TextView warningDisplay;
+    private User currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        currentUser = getIntent().getParcelableExtra("user");
+        windDisplay = findViewById(R.id.windy_textbox);
+        weatherDisplay = findViewById(R.id.weather_textbox);
+        tempDisplay = findViewById(R.id.temp_textbox);
+        warningDisplay = findViewById(R.id.warning_textbox);
         addButtons();
         requestLocationPermissions();
         getLocation();
@@ -55,27 +69,28 @@ public class HomeActivity extends AppCompatActivity {
         Button medicationButton = findViewById(R.id.medication_button);
         Button profileButton = findViewById(R.id.profile_button);
         Intent alarmLink = new Intent(this, AlarmActivity.class);
+        alarmLink.putExtra("user", currentUser);
         Intent medicineLink = new Intent(this, MedicineActivity.class);
+        medicineLink.putExtra("user", currentUser);
+        Intent profileLink = new Intent(this, ProfileActivity.class);
+        profileLink.putExtra("user", currentUser);
 
         alarmsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Moving to Alarms", Toast.LENGTH_LONG).show();
                 startActivity(alarmLink);
             }
         });
         medicationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Medication Button Pressed", Toast.LENGTH_LONG).show();
-                startActivity(medicineLink
-                );
+                startActivity(medicineLink);
             }
         });
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Profile Button Pressed", Toast.LENGTH_LONG).show();
+                startActivity(profileLink);
             }
         });
     }
@@ -112,7 +127,7 @@ public class HomeActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        printWeatherData();
+                        showWeatherData();
                     }
                 });
             } catch (JSONException e) {
@@ -131,7 +146,7 @@ public class HomeActivity extends AppCompatActivity {
                 public void run() {
                     updateWeatherData();
                 }
-            }, 3000);
+            }, INIT_DELAY_TIME);
 
         } catch (JSONException e) {
             throw new RuntimeException(e);
@@ -141,14 +156,11 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    private void printWeatherData(){
+    private void showWeatherData(){
         if(service != null){
-            System.out.println("" + service.getTemperature() + " " + service.getWindType() + " " + service.getWeather());
-
-            Toast.makeText(this, "Latitude: " + latitude + "Longitude: " + longitude, Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Temperature: " + service.getTemperature(), Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Weather: " + service.getWeather(), Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Wind Speed: " + service.getWindSpeed(), Toast.LENGTH_LONG).show();
+            tempDisplay.setText(Double.toString(service.getTemperature()));
+            weatherDisplay.setText(service.getWeather());
+            windDisplay.setText(service.getWindType());
         }
     }
 }

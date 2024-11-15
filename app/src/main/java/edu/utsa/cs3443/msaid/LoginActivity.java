@@ -57,7 +57,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = usernameInput.getText().toString();
                 String password = passwordInput.getText().toString();
-                Toast.makeText(view.getContext(), "Login Pressed", Toast.LENGTH_LONG).show();
                 Boolean foundUser = false;
                 while(finalScnr.hasNext()){
                     String[] buffer = (finalScnr.next()).split(",");
@@ -70,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
                 if(!foundUser){
-                    Toast.makeText(view.getContext(), "Username and/or Password is incorrect", Toast.LENGTH_LONG).show();
+                    Toast.makeText(view.getContext(), "Username and/or password is incorrect.", Toast.LENGTH_LONG).show();
                 }
             }
         });

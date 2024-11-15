@@ -25,15 +25,18 @@ public class SignupActivityOne extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_one);
         Intent continueSignup = new Intent(this, SignupActivityTwo.class);
+        initViews(continueSignup);
+    }
+
+    private void initViews(Intent continueSignup){
         Button signupButton = findViewById(R.id.complete_signup);
         EditText usernameInput = findViewById(R.id.username_input);
         EditText passwordInput = findViewById(R.id.password_input);
         EditText confirmInput = findViewById(R.id.confirm_password_input);
 
-
-        signupButton.setOnClickListener(new View.OnClickListener() {
+        signupButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
+            public void onClick(View view){
                 String username = usernameInput.getText().toString();
                 String password = passwordInput.getText().toString();
                 String confirmPassword = confirmInput.getText().toString();
@@ -54,6 +57,5 @@ public class SignupActivityOne extends AppCompatActivity {
                 startActivity(continueSignup);
             }
         });
-
     }
 }

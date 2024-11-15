@@ -60,7 +60,6 @@ public class SignupActivityTwo extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Sign Up Pressed", Toast.LENGTH_LONG).show();
                 String firstName = firstNameInput.getText().toString();
                 String lastName = lastNameInput.getText().toString();
                 String age = ageInput.getText().toString();
