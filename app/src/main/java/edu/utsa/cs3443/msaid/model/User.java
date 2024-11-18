@@ -10,20 +10,17 @@ import java.util.ArrayList;
 public class User implements Parcelable {
     private String name;
     private int age;
-    private ArrayList<Alarm> alarms;
     private ArrayList<Medicine> medicines;
 
     public User(String name, int age){
         this.name = name;
         this.age = age;
-        this.alarms = new ArrayList<>();
         this.medicines = new ArrayList<>();
     }
 
     protected User(Parcel in){
         this.name = in.readString();
         this.age = in.readInt();
-        this.alarms = in.createTypedArrayList(Alarm.CREATOR);
         this.medicines = in.createTypedArrayList(Medicine.CREATOR);
     }
 
@@ -43,14 +40,6 @@ public class User implements Parcelable {
         this.age = age;
     }
 
-    public ArrayList<Alarm> getAlarms() {
-        return alarms;
-    }
-
-    public void setAlarms(ArrayList<Alarm> alarms) {
-        this.alarms = alarms;
-    }
-
     public ArrayList<Medicine> getMedicines() {
         return medicines;
     }
@@ -68,7 +57,6 @@ public class User implements Parcelable {
     public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeInt(age);
-        dest.writeTypedList(alarms);
         dest.writeTypedList(medicines);
     }
 
