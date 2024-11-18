@@ -1,9 +1,35 @@
 Version -1.0:
     -Set up the welcome activity, signup activity, and login activity. No functionality outside of
     linking to one another via StartActivity().
-    -Starting in "negative" versions so Version 0 will be when the app has all currently intended
+    -Starting in "negative" versions so Version 1.0 will be when the app has all currently intended
     screens.
 Version -1.1.0:
     -Split SignupActivity.java into SignupActivityOne.java and SignupActivityTwo.java.
 Version -1.2.0:
     -Added Home Screen with placeholder textboxes for the alarms display and the weather display
+Version -1.3.0:
+    -Added the Alarms pathway of Activities.
+    -Created the User.java, Medicine.java, Alarm.java, and WeatherService.java model classes.
+    -Implemented the Open-Mateo.com geocoding weather api for the WeatherService model class.
+    -Implemented Android's built in Location features to communicate with the weather API.
+    -Added TODOs.
+Version -1.4.0:
+    -Added functionality for first signup page and removed TODO.
+Version -1.5.0:
+    -Added Medicine route of Activities.
+Version -1.6.0:
+    -Added functionality for login and sign up activities, creating the userlogin file if it does not exist and
+    writing to it the login info of the user upon signup while using it to instantiate an User upon login.
+    -Made model classes with the exception of the WeatherService parceable, allowing them to be added to intents.
+    -Removed TODO no longer needed.
+Version 1.0:
+    -Transferring to positive version names due to accessibility to all activities.
+    -Added ProfileActivity with most functionality.
+    -Added putExtras and getExtras for Users in non-model classes.
+Version 1.1:
+    -Added "Remember Me" to login screen.
+    -Added logout button to profile screen.
+Version 1.1.1:
+    -Color adjustments.
+Version 1.2:
+    -Added functionality for alarm activities.
