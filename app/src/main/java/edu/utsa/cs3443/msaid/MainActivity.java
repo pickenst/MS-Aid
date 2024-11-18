@@ -1,36 +1,52 @@
 package edu.utsa.cs3443.msaid;
 
+import static java.lang.Integer.parseInt;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import edu.utsa.cs3443.msaid.model.User;
 
 public class MainActivity extends AppCompatActivity {
 
     /*
-        TODO: Cleanup
+        TODO:
+         -Cleanup
      */
+    private Intent loginLink;
+    private Intent signupLink;
     String userLoginDir = "userLogin.csv";
+    String lastUserDir = "last.csv";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         requestLocationPermissions();
-        Intent loginLink = new Intent(this, LoginActivity.class);
-        Intent signupLink = new Intent(this, SignupActivityOne.class);
+        try {
+            resumeUser();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        loginLink = new Intent(this, LoginActivity.class);
+        signupLink = new Intent(this, SignupActivityOne.class);
         validateFiles();
-        initButtons(loginLink, signupLink);
+        initButtons();
     }
 
-    private void initButtons(Intent loginLink, Intent signupLink){
+    private void initButtons(){
         Button loginButton = findViewById(R.id.login);
         Button signupButton = findViewById(R.id.signup);
         loginButton.setOnClickListener(new View.OnClickListener(){
@@ -56,6 +72,19 @@ public class MainActivity extends AppCompatActivity {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    private void resumeUser() throws FileNotFoundException {
+        Intent homeLink = new Intent(this, HomeActivity.class);
+        File lastUser = new File(getFilesDir(), lastUserDir);
+        if(!lastUser.exists()){
+            return;
+        }
+        InputStream in = this.openFileInput(lastUserDir);
+        Scanner scnr = new Scanner(in);
+        String[] buffer = scnr.nextLine().split(",");
+        homeLink.putExtra("user", new User(buffer[0], Integer.parseInt(buffer[1])));
+        startActivity(homeLink);
     }
 
     private void requestLocationPermissions() {

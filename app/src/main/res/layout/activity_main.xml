@@ -15,11 +15,12 @@
         android:backgroundTint="@color/text_box_color_1"
         android:text="@string/log_in"
         android:textColor="@color/black"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63" />
+        app:layout_constraintVertical_bias="0.535" />
 
     <TextView
         android:id="@+id/title"
@@ -44,10 +45,11 @@
         android:backgroundTint="@color/text_box_color_1"
         android:text="@string/sign_up"
         android:textColor="@color/black"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
+        app:layout_constraintVertical_bias="0.684" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

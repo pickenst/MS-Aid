@@ -77,4 +77,18 @@
         app:layout_constraintTop_toTopOf="@+id/info_backdrop"
         app:layout_constraintVertical_bias="0.516" />
 
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="231dp"
+        android:layout_height="112dp"
+        android:backgroundTint="@color/button_pink"
+        android:text="@string/log_out"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.932" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

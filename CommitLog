@@ -22,7 +22,10 @@ Version -1.6.0:
     writing to it the login info of the user upon signup while using it to instantiate an User upon login.
     -Made model classes with the exception of the WeatherService parceable, allowing them to be added to intents.
     -Removed TODO no longer needed.
-Version 1.0.0:
+Version 1.0:
     -Transferring to positive version names due to accessibility to all activities.
     -Added ProfileActivity with most functionality.
     -Added putExtras and getExtras for Users in non-model classes.
+Version 1.1:
+    -Added "Remember Me" to login screen.
+    -Added logout button to profile screen.
