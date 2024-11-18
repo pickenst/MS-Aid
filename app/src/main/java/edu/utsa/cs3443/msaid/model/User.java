@@ -17,7 +17,7 @@ public class User implements Parcelable {
         this.age = age;
         this.medicines = new ArrayList<>();
     }
-
+    
     protected User(Parcel in){
         this.name = in.readString();
         this.age = in.readInt();
