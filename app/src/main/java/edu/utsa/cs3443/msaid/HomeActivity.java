@@ -2,11 +2,8 @@ package edu.utsa.cs3443.msaid;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +15,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import edu.utsa.cs3443.msaid.model.Alarm;
 
 public class HomeActivity extends AppCompatActivity {
     private ArrayList<Alarm> alarms;

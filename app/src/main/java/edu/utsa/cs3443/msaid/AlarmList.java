@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
+import edu.utsa.cs3443.msaid.model.Alarm;
+
 public class AlarmList extends RecyclerView.Adapter<AlarmList.AlarmViewHolder> {
     private ArrayList<Alarm> alarms;
 

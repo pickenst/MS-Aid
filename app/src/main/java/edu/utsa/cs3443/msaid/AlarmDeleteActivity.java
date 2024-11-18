@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import edu.utsa.cs3443.msaid.model.Alarm;
+
 public class AlarmDeleteActivity extends AppCompatActivity {
     private static final String ALARM_FILE = "alarms.csv";
     private ArrayList<Alarm> alarms;

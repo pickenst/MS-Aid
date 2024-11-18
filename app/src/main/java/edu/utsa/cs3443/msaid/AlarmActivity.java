@@ -14,6 +14,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import edu.utsa.cs3443.msaid.model.Alarm;
+
 public class AlarmActivity extends AppCompatActivity {
     private ArrayList<Alarm> alarms;
     private AlarmList alarmList;

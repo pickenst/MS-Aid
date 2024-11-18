@@ -15,6 +15,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
+import edu.utsa.cs3443.msaid.model.Alarm;
+
 public class AlarmConfirmationActivity extends AppCompatActivity {
     private static final String ALARM_FILE = "alarms.csv";
     private String alarmName;
