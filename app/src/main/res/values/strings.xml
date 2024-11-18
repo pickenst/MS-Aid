@@ -35,6 +35,4 @@
     <string name="yes1">Yes</string>
     <string name="no1">No</string>
     <string name="alarm_placeholder">ALARM PLACEHOLDER</string>
-    <string name="loading_placeholder">...</string>
-    <string name="log_out">Log Out</string>
 </resources>

@@ -62,91 +62,31 @@
         app:layout_constraintTop_toTopOf="@+id/home_panel"
         app:layout_constraintVertical_bias="0.625" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/alarmRecyclerView"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        android:background="@drawable/rounded_border"
+        app:layout_constraintTop_toBottomOf="@+id/weather_placeholder"
+        app:layout_constraintBottom_toTopOf="@+id/home_panel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+
+
     <TextView
-        android:id="@+id/alarm_placeholder"
-        android:layout_width="336dp"
-        android:layout_height="280dp"
+        android:id="@+id/weather_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="368dp"
         android:background="@color/white"
         android:gravity="center"
-        android:text="ALARM PLACEHOLDER"
+        android:text="WEATHER PLACEHOLDER"
         app:layout_constraintBottom_toTopOf="@+id/home_panel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
-
-
-    <ImageView
-        android:id="@+id/weather_backdrop"
-        android:layout_width="415dp"
-        android:layout_height="349dp"
-        android:background="@color/white"
-        app:srcCompat="@drawable/underlay"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-1dp" />
-
-    <TextView
-        android:id="@+id/temp_textbox"
-        android:layout_width="80dp"
-        android:layout_height="70dp"
-        android:background="@drawable/roundback"
-        android:backgroundTint="@color/textbox_gray"
-        android:gravity="center"
-        android:text="@string/loading_placeholder"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/weather_backdrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="@+id/weather_backdrop"
-        app:layout_constraintTop_toTopOf="@+id/weather_backdrop"
-        app:layout_constraintVertical_bias="0.853" />
-
-    <TextView
-        android:id="@+id/weather_textbox"
-        android:layout_width="113dp"
-        android:layout_height="49dp"
-        android:background="@drawable/roundback"
-        android:backgroundTint="@color/textbox_gray"
-        android:gravity="center"
-        android:text="@string/loading_placeholder"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/weather_backdrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/weather_backdrop"
-        app:layout_constraintVertical_bias="0.123" />
-
-    <TextView
-        android:id="@+id/windy_textbox"
-        android:layout_width="113dp"
-        android:layout_height="49dp"
-        android:background="@drawable/roundback"
-        android:backgroundTint="@color/textbox_gray"
-        android:gravity="center"
-        android:text="@string/loading_placeholder"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/weather_backdrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="@+id/weather_backdrop"
-        app:layout_constraintTop_toTopOf="@+id/weather_backdrop"
-        app:layout_constraintVertical_bias="0.84" />
-
-    <TextView
-        android:id="@+id/warning_textbox"
-        android:layout_width="113dp"
-        android:layout_height="49dp"
-        android:background="@drawable/roundback"
-        android:backgroundTint="@color/textbox_gray"
-        android:gravity="center"
-        android:text="@string/loading_placeholder"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/weather_backdrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/weather_backdrop"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
