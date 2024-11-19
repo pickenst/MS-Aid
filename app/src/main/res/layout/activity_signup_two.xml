@@ -118,6 +118,7 @@
             android:text="@string/yes"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:backgroundTint="@color/control_panel_red"
             tools:layout_editor_absoluteX="66dp"
             tools:layout_editor_absoluteY="539dp" />
 
@@ -129,6 +130,7 @@
             android:text="@string/no"
             android:textColor="@color/black"
             android:textSize="20sp"
+            android:buttonTint="@color/control_panel_red"
             tools:layout_editor_absoluteX="232dp"
             tools:layout_editor_absoluteY="539dp" />
     </RadioGroup>

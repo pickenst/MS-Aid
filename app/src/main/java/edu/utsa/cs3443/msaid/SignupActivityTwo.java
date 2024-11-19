@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -41,6 +43,13 @@ public class SignupActivityTwo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_two);
+
+
+        RadioButton noRadio = findViewById(R.id.no_radio);
+        noRadio.setButtonTintList(ContextCompat.getColorStateList(this, R.color.control_panel_red));
+        RadioButton yesRadio = findViewById(R.id.yes_radio);
+        yesRadio.setButtonTintList(ContextCompat.getColorStateList(this, R.color.control_panel_red));
+
         Intent loginLink = new Intent(this, LoginActivity.class);
         Intent intent = getIntent();
 
