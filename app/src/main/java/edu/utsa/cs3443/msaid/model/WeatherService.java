@@ -15,10 +15,12 @@ import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 
+/**
+ * @author Trey Pickens of Team Tetrad
+ * The WeatherService class is MS Aids weather service. It pulls live data from the GeoWeather API and produces weather data.
+ */
 public class WeatherService {
-    /*
-        TODO: _HEAVY_ Cleanup
-     */
+
     private double longitude;
     private double latitude;
     private HashMap<Integer,String> weatherCodeTable;
@@ -29,6 +31,14 @@ public class WeatherService {
     private String weather;
 
 
+    /**
+     * Initializes the Weather Service
+     * @param latitude the user's current latitude (double)
+     * @param longitude the user's current longitude (double)
+     * @param activity the Activity the weather service is used in (Activity)
+     * @throws JSONException
+     * @throws IOException
+     */
     public WeatherService(double latitude, double longitude, Activity activity) throws JSONException, IOException {
 
         weatherCodeTable = new HashMap<>();
@@ -63,6 +73,11 @@ public class WeatherService {
         });
     }
 
+    /**
+     * The primary function of the service which sets it's local weather variables
+     * @throws IOException
+     * @throws JSONException
+     */
     private void setWeatherData() throws IOException, JSONException {
         String geoWeatherURL = "https://api.open-meteo.com/v1/forecast?latitude=" + this.latitude + "&longitude=" + this.longitude + "&current=temperature_2m,weather_code,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph";
 
@@ -94,6 +109,11 @@ public class WeatherService {
         this.temperature = weatherInfo.optDouble("temperature_2m");
     }
 
+    /**
+     * Makes a data request towards the API
+     * @param urlString the URL of the API
+     * @return HttpURLConnection
+     */
     private HttpURLConnection fetchApiResponse(String urlString){
         try{
             URL url = new URL(urlString);
@@ -108,6 +128,12 @@ public class WeatherService {
         }
     }
 
+    /**
+     * Reads the requested data from the API
+     * @param apiConnection the requested data
+     * @return String
+     * @throws IOException
+     */
     private String readApiResponse(HttpURLConnection apiConnection) throws IOException{
         StringBuilder resultJson = new StringBuilder();
 
@@ -122,6 +148,11 @@ public class WeatherService {
         return resultJson.toString();
     }
 
+    /**
+     * Initializes the WMOCodes from the csv file to the 'Code-to-Meaning' HashMap
+     * @param activity the current Activity of the weather service
+     * @throws FileNotFoundException
+     */
     private void initCodeTable(Activity activity) throws FileNotFoundException {
         String fileName = "WMOCodes.csv";
         AssetManager manager = activity.getAssets();
@@ -139,6 +170,11 @@ public class WeatherService {
         }
     }
 
+    /**
+     * Gets the typing of the wind based on speed
+     * @param windSpeed the user's local windspeed in MPH (double)
+     * @return String
+     */
     private String getWindType(double windSpeed){
         if(windSpeed <= 3){
             return "Little Wind";
@@ -162,15 +198,35 @@ public class WeatherService {
             return "Storm Winds";
         }
     }
+
+    /**
+     * Gets the current weather type
+     * @return String
+     */
     public String getWeather(){
         return this.weather;
     }
+
+    /**
+     * Gets the current wind type
+     * @return String
+     */
     public String getWindType(){
         return this.windType;
     }
+
+    /**
+     * Gets the current temperature
+     * @return double
+     */
     public double getTemperature(){
         return this.temperature;
     }
+
+    /**
+     * Gets the current wind speed
+     * @return double
+     */
     public double getWindSpeed(){
         return this.windSpeed;
     }

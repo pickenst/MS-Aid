@@ -23,11 +23,6 @@ import java.util.Scanner;
 import edu.utsa.cs3443.msaid.model.User;
 
 public class LoginActivity extends AppCompatActivity {
-    /*
-        TODO:
-         -Add basic functionality (Pulling data from an User file based on login and instantiating an User object)
-     */
-
     String usersDir = "users";
     String userLoginDir = "userLogin.csv";
     String lastUserDir = "last.csv";
