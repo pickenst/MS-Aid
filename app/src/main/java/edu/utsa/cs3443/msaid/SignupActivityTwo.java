@@ -30,11 +30,11 @@ import java.util.Scanner;
 
 import edu.utsa.cs3443.msaid.model.User;
 
+/**
+ * @author Trey Pickens
+ * SignupActivityTwo is the second of two sign up activities where the user can complete their sign up
+ */
 public class SignupActivityTwo extends AppCompatActivity {
-    /*
-        TODO:
-         -Create a new User directory containing user info named after user
-     */
 
     String usersDir = "users";
     String userLoginDir = "userLogin.csv";

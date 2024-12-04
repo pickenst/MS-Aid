@@ -1,85 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
     android:background="@drawable/background">
 
-    <!-- white background -->
-
-    <!-- Title TextView -->
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.65"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/underlay" />
-
     <TextView
-        android:id="@+id/Delete"
-        android:layout_width="278dp"
-        android:layout_height="117dp"
-        android:layout_marginTop="92dp"
-        android:background="@drawable/roundback"
-        android:backgroundTint="@color/text_box_color_1"
-        android:gravity="center"
-        android:text="Are you sure?"
+        android:id="@+id/confirmationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to delete this medicine?"
+        android:textSize="18sp"
+        android:padding="16dp"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAlignment="center" />
 
     <Button
-        android:id="@+id/back"
-        android:layout_width="88dp"
-        android:layout_height="48dp"
+        android:id="@+id/confirmDeleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yes, Delete"
         android:backgroundTint="@color/button_pink"
-        android:text="back"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005" />
+        android:layout_marginTop="24dp" />
 
     <Button
-    android:id="@+id/yes"
-    android:layout_width="259dp"
-    android:layout_height="57dp"
-    android:layout_marginBottom="200dp"
-    android:backgroundTint="@color/button_pink"
-    android:text="@string/yes"
-    android:textColor="@color/black"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.559"
-    app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/no"
-        android:layout_width="259dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="128dp"
+        android:id="@+id/cancelDeleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
         android:backgroundTint="@color/button_pink"
-        android:text="@string/no"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.559"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="16dp" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

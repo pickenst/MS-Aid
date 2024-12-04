@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-
     <ImageView
         android:id="@+id/foregroundImage"
         android:layout_width="180dp"
@@ -20,20 +19,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/medicine_list_text_view"
-        android:layout_width="325dp"
-        android:layout_height="520dp"
+    <!-- RecyclerView to display the list of medicines -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/medicineRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="16dp"
-        android:layout_marginTop="9dp"
-        android:background="@drawable/bubble_background"
-        android:padding="16dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:padding="8dp"
         android:scrollbars="vertical"
-        android:textSize="18sp"
+        android:background="@drawable/roundback"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foregroundImage" />
+        app:layout_constraintTop_toBottomOf="@+id/foregroundImage"
+        android:choiceMode="singleChoice" />
 
+    <!-- Button layout -->
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
@@ -46,6 +50,7 @@
 
     <!-- Back Button -->
 
+    <!-- Remove Button -->
     <Button
         android:id="@+id/back"
         android:layout_width="88dp"
@@ -55,15 +60,15 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/remove"
         android:layout_width="124dp"
-        android:layout_height="44dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/button_pink"
         android:minWidth="64dp"
         android:text="remove"
@@ -72,37 +77,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintStart_toEndOf="@+id/add"
-        app:layout_constraintTop_toBottomOf="@+id/medicine_list_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/medicineRecyclerView" />
 
+    <!-- Add Button -->
     <Button
         android:id="@+id/add"
         android:layout_width="107dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:backgroundTint="@color/button_pink"
         android:minWidth="64dp"
         android:text="add"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.271"
+        app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicine_list_text_view" />
-
-    <Button
-        android:id="@+id/Test"
-        android:layout_width="283dp"
-        android:layout_height="141dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="371dp"
-        android:backgroundTint="@color/button_pink"
-        android:minWidth="68dp"
-        android:text="Fingolimod"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/medicine_list_text_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foregroundImage" />
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Scanner;
 
+/**
+ * @author Trey Pickens
+ * SignupActivityOne is the first of two signup Activities to create a new profile
+ */
 public class SignupActivityOne extends AppCompatActivity {
 
 
@@ -28,6 +32,10 @@ public class SignupActivityOne extends AppCompatActivity {
         initViews(continueSignup);
     }
 
+    /**
+     * Initializes the views in the Activity
+     * @param continueSignup the Intent for the next sign up screen (Intent)
+     */
     private void initViews(Intent continueSignup){
         Button signupButton = findViewById(R.id.complete_signup);
         EditText usernameInput = findViewById(R.id.username_input);

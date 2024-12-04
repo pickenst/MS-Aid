@@ -19,17 +19,16 @@ import java.io.IOException;
 
 import edu.utsa.cs3443.msaid.model.User;
 
+/**
+ * @author Trey Pickens
+ * ProfileActivity is where an user may view their information
+ */
 public class ProfileActivity extends AppCompatActivity {
 
     private User currentUser;
     private String lastUserDir = "last.csv";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        /*
-            TODO:
-             -Add edit profile functionality.
-             -Add profile picture or remove profile picture for more active space.
-         */
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);

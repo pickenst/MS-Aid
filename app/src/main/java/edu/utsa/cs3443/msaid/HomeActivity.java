@@ -34,16 +34,16 @@ import edu.utsa.cs3443.msaid.AlarmList;
 import edu.utsa.cs3443.msaid.model.User;
 import edu.utsa.cs3443.msaid.model.WeatherService;
 
+/**
+ * @author Trey Pickens
+ * @author Antonio Valencia-Giles
+ */
 public class HomeActivity extends AppCompatActivity {
     private final int INIT_DELAY_TIME = 1250; //ms
 
     /*
         TODO:
          -Implement visual functionality of WeatherService
-         -Implement the User's Alarms array
-         -Add User object to class that can be added to next activity (Or get the User from the previous activity)
-         -_HEAVY_ Cleanup
-         -Create ProfileActivity and add Intent
      */
 
     private static double longitude;
@@ -123,6 +123,9 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Requests location permissions from Android
+     */
     private void requestLocationPermissions() {
         //Request location permissions if application does not possess them
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -130,6 +133,9 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Requests location from Android
+     */
     private void getLocation(){
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
@@ -148,6 +154,9 @@ public class HomeActivity extends AppCompatActivity {
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 6000, 10, listener);
     }
 
+    /**
+     * Updates the weather data variables
+     */
     private void updateWeatherData() {
         if(service != null){
             try {
@@ -166,6 +175,9 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Initializes the weather service
+     */
     private void initWeatherService(){
         try{
             service = new WeatherService(latitude, longitude, this);
@@ -184,6 +196,9 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Updates the weather data displays
+     */
     private void showWeatherData(){
         if(service != null){
             tempDisplay.setText(Double.toString(service.getTemperature()));
@@ -192,6 +207,9 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Loads the user's alarms from a CSV
+     */
     private void loadAlarmsFromCsv() {
         alarms.clear();
         try (FileInputStream fis = openFileInput("alarms.csv");

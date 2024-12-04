@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
 
 /**
- * @author Trey Pickens of Team Tetrad
+ * @author Trey Pickens
  * The WeatherService class is MS Aids weather service. It pulls live data from the GeoWeather API and produces weather data.
  */
 public class WeatherService {

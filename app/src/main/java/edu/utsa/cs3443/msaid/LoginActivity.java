@@ -22,6 +22,10 @@ import java.util.Scanner;
 
 import edu.utsa.cs3443.msaid.model.User;
 
+/**
+ * @author Trey Pickens
+ * The Login Activity is where the user can login to their profile from
+ */
 public class LoginActivity extends AppCompatActivity {
 
     String usersDir = "users";
