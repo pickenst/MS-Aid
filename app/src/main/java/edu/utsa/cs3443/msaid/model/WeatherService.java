@@ -2,6 +2,9 @@ package edu.utsa.cs3443.msaid.model;
 
 import android.app.Activity;
 import android.content.res.AssetManager;
+import android.graphics.drawable.Drawable;
+
+import androidx.appcompat.content.res.AppCompatResources;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,6 +24,16 @@ import java.util.concurrent.ExecutorService;
  */
 public class WeatherService {
 
+    private final String CLOUDY_ICON = "cloudy";
+    private final String COLD_ICON = "cold";
+    private final String HOT_ICON = "hot";
+    private final String HAIL_ICON = "hail";
+    private final String PARTLY_CLOUDY_ICON = "partly_cloudy";
+    private final String RAIN_ICON = "rain";
+    private final String SNOW_ICON = "snow";
+    private final String SUNNY_ICON = "sunny";
+    private final String THUNDERSTORM_ICON = "thunderstorm";
+
     private double longitude;
     private double latitude;
     private HashMap<Integer,String> weatherCodeTable;
@@ -29,7 +42,11 @@ public class WeatherService {
     private double windSpeed;
     private double temperature;
     private String weather;
+    private int weatherCode;
 
+    private Drawable weatherIcon = null;
+    private Drawable tempIcon = null;
+    private final Activity ACTIVE_ACTIVITY;
 
     /**
      * Initializes the Weather Service
@@ -41,9 +58,11 @@ public class WeatherService {
      */
     public WeatherService(double latitude, double longitude, Activity activity) throws JSONException, IOException {
 
-        weatherCodeTable = new HashMap<>();
-        initCodeTable(activity);
+        this.weatherCodeTable = new HashMap<>();
+        this.initCodeTable(activity);
         this.setLocation(latitude, longitude);
+        this.ACTIVE_ACTIVITY = activity;
+        this.setWeatherIcon();
     }
 
     public void setLongitude(double longitude) throws JSONException, IOException {
@@ -103,6 +122,7 @@ public class WeatherService {
         JSONObject weatherInfo = resultsJsonObj.getJSONObject("current");
         int weatherCode = weatherInfo.optInt("weather_code");
 
+        this.weatherCode = weatherCode;
         this.weather = weatherCodeTable.get(weatherCode);
         this.windSpeed = weatherInfo.optDouble("wind_speed_10m");
         this.windType = getWindType(windSpeed);
@@ -231,5 +251,58 @@ public class WeatherService {
         return this.windSpeed;
     }
 
+    private void setWeatherIcon() {
+        String assetName = null;
+        if(this.weatherCode <= 1){
+            assetName = SUNNY_ICON;
+        }
+        else if(this.weatherCode == 2){
+            assetName = PARTLY_CLOUDY_ICON;
+        }
+        else if(this.weatherCode <= 48){
+            assetName = CLOUDY_ICON;
+        }
+        else if(this.weatherCode <= 67){
+            assetName = RAIN_ICON;
+        }
+        else if(this.weatherCode <= 77){
+            assetName = SNOW_ICON;
+        }
+        else if(this.weatherCode <= 82){
+            assetName = RAIN_ICON;
+        }
+        else if(this.weatherCode <= 86){
+            assetName = SNOW_ICON;
+        }
+        else{
+            assetName = THUNDERSTORM_ICON;
+        }
+        //String assetName = this.weather.toLowerCase();
+        System.out.println(assetName);
+        int id = ACTIVE_ACTIVITY.getResources().getIdentifier(assetName, "drawable", this.ACTIVE_ACTIVITY.getPackageName());
+        this.weatherIcon = AppCompatResources.getDrawable(ACTIVE_ACTIVITY, id);
+    }
 
+    public Drawable getWeatherIcon() {
+        return weatherIcon;
+    }
+
+    private void setTempIcon(){
+        String assetName = null;
+        if(this.temperature <= 65){
+            assetName = COLD_ICON;
+        }
+        else if(temperature >= 80){
+            assetName = HOT_ICON;
+        }
+        if(assetName == null){
+            return;
+        }
+        int id = ACTIVE_ACTIVITY.getResources().getIdentifier(assetName, "drawable", this.ACTIVE_ACTIVITY.getPackageName());
+        this.tempIcon = AppCompatResources.getDrawable(ACTIVE_ACTIVITY, id);
+    }
+
+    public Drawable getTempIcon(){
+        return this.tempIcon;
+    }
 }

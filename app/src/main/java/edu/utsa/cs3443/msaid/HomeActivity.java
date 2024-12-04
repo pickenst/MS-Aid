@@ -18,6 +18,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +55,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView weatherDisplay;
     private TextView tempDisplay;
     private TextView warningDisplay;
+    private ImageView weatherIconDisplay;
     private User currentUser;
 
     private ArrayList<Alarm> alarms;
@@ -67,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
         windDisplay = findViewById(R.id.windy_textbox);
         weatherDisplay = findViewById(R.id.weather_textbox);
         tempDisplay = findViewById(R.id.temp_textbox);
-        warningDisplay = findViewById(R.id.warning_textbox);
+        weatherIconDisplay = findViewById(R.id.weather_icon);
         addButtons();
         requestLocationPermissions();
         getLocation();
@@ -204,6 +206,7 @@ public class HomeActivity extends AppCompatActivity {
             tempDisplay.setText(Double.toString(service.getTemperature()));
             weatherDisplay.setText(service.getWeather());
             windDisplay.setText(service.getWindType());
+            weatherIconDisplay.setImageDrawable(service.getWeatherIcon());
         }
     }
 
