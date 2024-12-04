@@ -8,7 +8,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,9 +28,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
 
 import edu.utsa.cs3443.msaid.model.Alarm;
+import edu.utsa.cs3443.msaid.AlarmList;
 import edu.utsa.cs3443.msaid.model.User;
 import edu.utsa.cs3443.msaid.model.WeatherService;
 
@@ -112,6 +111,16 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(profileLink);
             }
         });
+
+        RecyclerView alarmRecyclerView = findViewById(R.id.alarmRecyclerView);
+        alarmRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        alarms = new ArrayList<>();
+        loadAlarmsFromCsv();
+
+        alarmList = new AlarmList(alarms);
+        alarmRecyclerView.setAdapter(alarmList);
+
     }
 
     private void requestLocationPermissions() {

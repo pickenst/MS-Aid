@@ -39,3 +39,5 @@ Version 1.2.2:
     -Minor adjustments
 Version 1.3:
     -Removed profile picture placeholder for profile header
+Version 1.4:
+    -Added notifications to alarm activities, completing functionality
