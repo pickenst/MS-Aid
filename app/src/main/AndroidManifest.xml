@@ -31,48 +31,63 @@
 
         <activity
             android:name=".HomeActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".AlarmActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".AlarmAddActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".AlarmDeleteActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".AlarmConfirmationActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".SignupActivityTwo"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".SignupActivityOne"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
+            android:screenOrientation="portrait"
             android:exported="false"/>
         <activity
             android:name=".AddMedicineActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".DeleteMedicationActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MedicationConfirmationActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MedicationDetailActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MedicineActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

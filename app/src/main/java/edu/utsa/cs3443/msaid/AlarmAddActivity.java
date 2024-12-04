@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,6 +15,8 @@ import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Calendar;
+
+import edu.utsa.cs3443.msaid.model.User;
 
 /**
  * AlarmAddActivity allows users to add new alarms.
@@ -34,6 +37,18 @@ public class AlarmAddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_add);
+        Button back = findViewById(R.id.back_button);
+        Intent backLink = new Intent(this, AlarmActivity.class);
+        User currentUser;
+        Intent last = getIntent();
+        currentUser = last.getParcelableExtra("user");
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backLink.putExtra("user", currentUser);
+                startActivity(backLink);
+            }
+        });
 
         // Get references for the UI elements
         EditText nameInput = findViewById(R.id.alarmInput); // Input for the alarm name

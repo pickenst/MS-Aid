@@ -203,9 +203,11 @@ public class HomeActivity extends AppCompatActivity {
      */
     private void showWeatherData(){
         if(service != null){
-            tempDisplay.setText(Double.toString(service.getTemperature()));
+            String degreeSymbol = "\u00B0";
+            tempDisplay.setText(service.getTemperature() + degreeSymbol + "F");
             weatherDisplay.setText(service.getWeather());
             windDisplay.setText(service.getWindType());
+            service.setWeatherIcon();
             weatherIconDisplay.setImageDrawable(service.getWeatherIcon());
         }
     }

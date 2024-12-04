@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 
 import edu.utsa.cs3443.msaid.model.Alarm;
 import edu.utsa.cs3443.msaid.AlarmList;
+import edu.utsa.cs3443.msaid.model.User;
 
 /**
  * AlarmActivity is responsible for displaying the main list of alarms
@@ -26,7 +27,7 @@ import edu.utsa.cs3443.msaid.AlarmList;
 public class AlarmActivity extends AppCompatActivity {
     private static final String TAG = "AlarmActivity";  // Defines a tag for the log
     private ArrayList<Alarm> alarms;  // List of alarms to be displayed
-    private edu.utsa.cs3443.msaid.AlarmList alarmList; // The Adapter for binding the alarms to the RecyclerView
+    private edu.utsa.cs3443.msaid.AlarmList alarmList;// The Adapter for binding the alarms to the RecyclerView
 
     /**
      * Called for when the activity is created. Initializes the views, sets up the RecyclerView,
@@ -39,6 +40,9 @@ public class AlarmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_main);
+        User currentUser;
+        Intent last = getIntent();
+        currentUser = last.getParcelableExtra("user");
 
         Intent homeLink = new Intent(this, HomeActivity.class);
         Intent addLink = new Intent(this, AlarmAddActivity.class);
@@ -64,6 +68,7 @@ public class AlarmActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                addLink.putExtra("user", currentUser);
                 startActivity(addLink);
             }
         });
@@ -72,6 +77,7 @@ public class AlarmActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                deleteLink.putExtra("user", currentUser);
                 startActivity(deleteLink);
             }
         });
@@ -80,6 +86,7 @@ public class AlarmActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                homeLink.putExtra("user", currentUser);
                 startActivity(homeLink);
             }
         });

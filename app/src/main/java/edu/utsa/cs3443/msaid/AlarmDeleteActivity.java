@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import edu.utsa.cs3443.msaid.model.Alarm;
+import edu.utsa.cs3443.msaid.model.User;
 
 /**
  * AlarmDeleteActivity allows users to delete an existing alarm.
@@ -39,6 +40,10 @@ public class AlarmDeleteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_delete);
+        User currentUser;
+        Intent last = getIntent();
+        currentUser = last.getParcelableExtra("user");
+
 
         Intent confirmLink = new Intent(this, AlarmConfirmationActivity.class);
         Intent alarmLink = new Intent(this, AlarmActivity.class);
@@ -81,6 +86,7 @@ public class AlarmDeleteActivity extends AppCompatActivity {
                     confirmLink.putExtra("alarm_name", selectedAlarm.getName());
                     confirmLink.putExtra("alarm_time", selectedAlarm.getTime());
                     confirmLink.putExtra("alarm_am_pm", selectedAlarm.getAmPm());
+                    confirmLink.putExtra("user", currentUser);
                     startActivity(confirmLink); // Goes to AlarmConfirmationActivity
                 } else {
                     // Shows a toast message if no alarm is selected
@@ -94,6 +100,7 @@ public class AlarmDeleteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Goes back to AlarmActivity when the back button is pressed
+                alarmLink.putExtra("user", currentUser);
                 startActivity(alarmLink);
             }
         });

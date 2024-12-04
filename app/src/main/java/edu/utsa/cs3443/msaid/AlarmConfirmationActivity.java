@@ -17,6 +17,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 import edu.utsa.cs3443.msaid.model.Alarm;
+import edu.utsa.cs3443.msaid.model.User;
 
 /**
  * AlarmConfirmationActivity provides the confirmation screen for deleting an alarm.
@@ -42,6 +43,9 @@ public class AlarmConfirmationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_confirmation);
+        User currentUser;
+        Intent last = getIntent();
+        currentUser = last.getParcelableExtra("user");
 
         Intent yesLink = new Intent(this, AlarmActivity.class);
         Intent noLink = new Intent(this, AlarmDeleteActivity.class);
@@ -70,6 +74,7 @@ public class AlarmConfirmationActivity extends AppCompatActivity {
                     // Shows a toast message confirming the alarm has been deleted
                     Toast.makeText(view.getContext(), "Alarm Deleted", Toast.LENGTH_LONG).show();
                     // Goes back to AlarmActivity
+                    yesLink.putExtra("user", currentUser);
                     startActivity(yesLink);
                 } else {
                     // Shows a toast message if deletion failed
@@ -83,6 +88,7 @@ public class AlarmConfirmationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Goes back to AlarmDeleteActivity
+                noLink.putExtra("user", currentUser);
                 startActivity(noLink);
             }
         });
@@ -92,6 +98,7 @@ public class AlarmConfirmationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Goes back to AlarmDeleteActivity
+                noLink.putExtra("user", currentUser);
                 startActivity(noLink);
             }
         });

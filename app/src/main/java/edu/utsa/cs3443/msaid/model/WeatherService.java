@@ -62,7 +62,6 @@ public class WeatherService {
         this.initCodeTable(activity);
         this.setLocation(latitude, longitude);
         this.ACTIVE_ACTIVITY = activity;
-        this.setWeatherIcon();
     }
 
     public void setLongitude(double longitude) throws JSONException, IOException {
@@ -123,6 +122,7 @@ public class WeatherService {
         int weatherCode = weatherInfo.optInt("weather_code");
 
         this.weatherCode = weatherCode;
+        System.out.print(weatherCode);
         this.weather = weatherCodeTable.get(weatherCode);
         this.windSpeed = weatherInfo.optDouble("wind_speed_10m");
         this.windType = getWindType(windSpeed);
@@ -251,7 +251,7 @@ public class WeatherService {
         return this.windSpeed;
     }
 
-    private void setWeatherIcon() {
+    public void setWeatherIcon() {
         String assetName = null;
         if(this.weatherCode <= 1){
             assetName = SUNNY_ICON;
@@ -278,7 +278,6 @@ public class WeatherService {
             assetName = THUNDERSTORM_ICON;
         }
         //String assetName = this.weather.toLowerCase();
-        System.out.println(assetName);
         int id = ACTIVE_ACTIVITY.getResources().getIdentifier(assetName, "drawable", this.ACTIVE_ACTIVITY.getPackageName());
         this.weatherIcon = AppCompatResources.getDrawable(ACTIVE_ACTIVITY, id);
     }
@@ -287,7 +286,7 @@ public class WeatherService {
         return weatherIcon;
     }
 
-    private void setTempIcon(){
+    public void setTempIcon(){
         String assetName = null;
         if(this.temperature <= 65){
             assetName = COLD_ICON;
@@ -304,5 +303,9 @@ public class WeatherService {
 
     public Drawable getTempIcon(){
         return this.tempIcon;
+    }
+
+    public int getWeatherCode(){
+        return this.weatherCode;
     }
 }

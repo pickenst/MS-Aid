@@ -45,3 +45,7 @@ Version 1.5:
     -Added medication functionality.
 Version 1.6:
     -Added weather icon functionality.
+Version 1.7:
+    -Updated the weather icon display
+    -Locked all orientations to portrait
+    -Major Bug Fixes
