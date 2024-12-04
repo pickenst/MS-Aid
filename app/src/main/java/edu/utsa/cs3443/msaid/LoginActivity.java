@@ -23,6 +23,7 @@ import java.util.Scanner;
 import edu.utsa.cs3443.msaid.model.User;
 
 public class LoginActivity extends AppCompatActivity {
+
     String usersDir = "users";
     String userLoginDir = "userLogin.csv";
     String lastUserDir = "last.csv";

@@ -21,22 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.63" />
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="246dp"
-        android:layout_height="80dp"
-        android:background="@drawable/roundback"
-        android:backgroundTint="@color/text_box_color_1"
-        android:textColor="@color/black"
-        android:textSize="32sp"
-        android:gravity="center"
-        android:text="@string/msaid"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
-
     <Button
         android:id="@+id/signup"
         android:layout_width="219dp"
@@ -49,5 +33,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.791" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="285dp"
+        android:layout_height="206dp"
+        android:background="@drawable/roundback"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.207"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

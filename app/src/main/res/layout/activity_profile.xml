@@ -8,6 +8,23 @@
     tools:context=".ProfileActivity"
     android:background="@drawable/background">
 
+    <TextView
+        android:id="@+id/alarm_header2"
+        android:layout_width="255dp"
+        android:layout_height="98dp"
+        android:background="@drawable/roundback"
+        android:backgroundTint="@color/text_box_color_1"
+        android:gravity="center"
+        android:text="@string/profile"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.181" />
+
     <Button
         android:id="@+id/back_button"
         android:layout_width="127dp"
@@ -21,20 +38,7 @@
         app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007" />
-
-    <TextView
-        android:id="@+id/pfp_placeholder"
-        android:layout_width="195dp"
-        android:layout_height="189dp"
-        android:background="@color/white"
-        android:gravity="center"
-        android:text="Profile Picture Placeholder"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <ImageView
         android:id="@+id/info_backdrop"
