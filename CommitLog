@@ -49,3 +49,6 @@ Version 1.7:
     -Updated the weather icon display
     -Locked all orientations to portrait
     -Major Bug Fixes
+Version 1.7.1:
+    -Added Javadoc
+    -Updated some colors
